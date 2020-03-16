@@ -13,13 +13,6 @@
 
             <header class="post-full-header">
 
-                {{ with .Params.tags }}
-                    {{ $primaryTag := (index . 0) }}
-                    <section class="post-full-tags">
-                        <a href="{{ "/tags/" | relLangURL }}{{ $primaryTag | urlize }}">{{ $primaryTag }}</a>
-                    </section>
-                {{ end }}
-
                 <h1 class="post-full-title">{{ .Title }}</h1>
 
                 {{ if .Param "summary" }}
@@ -28,12 +21,17 @@
 
                 <div class="post-full-byline">
                     <section class="post-full-byline-content">
-
                         {{ if .Param "author" }}
                             {{- partial "post-author.html" . -}}
                         {{ end }}
 
                         <section class="post-full-byline-meta">
+                            {{ with .Params.tags }}
+                                {{ $primaryTag := (index . 0) }}
+                                <section class="post-full-tags">
+                                    <a href="{{ "/tags/" | relLangURL }}{{ $primaryTag | urlize }}">{{ $primaryTag }}</a>
+                                </section>
+                            {{ end }}
                             {{ if .Param "author" }}
                                 <h4 class="author-name">{{ .Param "author" }}</h4>
                             {{ end }}
@@ -49,11 +47,11 @@
                 </div>
             </header>
 
-            {{ if .Param "feature_image" }}
+            <!-- {{ if .Param "feature_image" }}
             <figure class="post-full-image">
-                <img src="{{ .Param "feature_image" }}" alt="{{ .Title }}" />
+                <img src="../../{{ .Param "feature_image" }}" alt="{{ .Title }}" />
             </figure>
-            {{ end }}
+            {{ end }} -->
 
             <section class="post-full-content">
                 <div class="post-content">
