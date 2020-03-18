@@ -47,7 +47,7 @@
 
                 {{ if .Param "feature_image" }}
                     <figure class="post-full-image">
-                        <img src="/ProgramProperly/{{ .Param "feature_image" }}" alt="{{ .Title }}" />
+                        <img src="/{{ .Param "feature_image" }}" alt="{{ .Title }}" />
                     </figure>
                 {{ end }}
             </header>
