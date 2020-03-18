@@ -15,18 +15,17 @@
             <a class="post-card-content-link" href="{{ .context.Permalink }}">
     
                 <header class="post-card-header">
-                    {{ with .context.Params.tags }}
-                        {{ $primaryTag := (index . 0) }}
-                        <div class="post-card-primary-tag">{{ $primaryTag }}</div>
-                    {{ end }}
-
                     <h2 class="post-card-title">{{ .context.Title }}</h2>
                 </header>
     
                 <section class="post-card-excerpt">
                     <p>{{ .context.Summary }}</p>
                 </section>
-    
+
+                {{ with .context.Params.tags }}
+                    {{ $primaryTag := (index . 0) }}
+                    <div class="post-card-primary-tag"><i class="fas fa-tag"></i> {{ $primaryTag }}</div>
+                {{ end }}
             </a>
 
             <footer class="post-card-meta">
