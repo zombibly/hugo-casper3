@@ -24,7 +24,7 @@
 
                 {{ with .context.Params.tags }}
                     {{ $primaryTag := (index . 0) }}
-                    <div class="post-card-primary-tag"><i class="fas fa-tag"></i> {{ $primaryTag }}</div>
+                    <div class="post-card-primary-tag"><i class="fas fa-tag"></i>&nbsp;{{ $primaryTag }}</div>
                 {{ end }}
             </a>
 

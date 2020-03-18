@@ -22,7 +22,7 @@
                 {{ with .Params.tags }}
                     {{ $primaryTag := (index . 0) }}
                     <section class="post-full-tags">
-                        <a href="{{ "/tags/" | relLangURL }}{{ $primaryTag | urlize }}"><i class="fas fa-tag"></i> {{ $primaryTag }}</a>
+                        <a href="{{ "/tags/" | relLangURL }}{{ $primaryTag | urlize }}"><i class="fas fa-tag"></i>&nbsp;{{ $primaryTag }}</a>
                     </section>
                 {{ end }}
 
